@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="5dp"
+    android:paddingVertical="4dp">
+
+    <!-- ====== FILA PRINCIPAL ====== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- 🔵 ICONO CIRCULAR -->
+        <LinearLayout
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/lectura_icon_circle"
+            android:gravity="center"
+            android:layout_marginEnd="8dp">
+
+            <ImageView
+                android:id="@+id/icTipoLectura"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/lectura_ic_detail"
+                app:tint="@null"
+                android:importantForAccessibility="no"  />
+        </LinearLayout>
+
+        <!-- 🧾 DETALLE DE LECTURA -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvItemMes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Setiembre"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#2D2D2D"
+                android:layout_marginBottom="2dp" />
+
+            <TextView
+                android:id="@+id/tvItemFecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30/09/2025 - 10:30 am"
+                android:textSize="16sp"
+                android:textColor="#8F8F8F" />
+        </LinearLayout>
+
+        <!-- 💰 VALOR Y BOTÓN EDITAR -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginStart="8dp">
+
+            <TextView
+                android:id="@+id/tvItemValor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="125.5"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="#2D2D2D"
+                android:gravity="center" />
+
+            <Button
+                android:id="@+id/btnEditar"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="4dp"
+                android:text="Editar"
+                android:textSize="13sp"
+                android:textColor="#1976D2"
+                android:backgroundTint="#E3F2FD"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="2dp"
+                android:elevation="1dp"
+                android:layout_gravity="center" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- ====== LÍNEA DIVISORIA ====== -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#BDBDBD"
+        android:layout_marginTop="10dp" />
+
+</LinearLayout>

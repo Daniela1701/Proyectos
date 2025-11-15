@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F6FA">
+
+    <!-- HEADER FIJO -->
+    <include layout="@layout/include_header" android:id="@+id/header"/>
+
+    <!-- CONTENIDO SCROLLABLE -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:padding="15dp">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Clasificación -->
+        <TextView
+            android:text="Clasificación:"
+            android:textStyle="bold"
+            android:textColor="#444"
+            android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Spinner
+            android:id="@+id/spClasificacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Nombre de unidad -->
+        <TextView
+            android:text="Nombre de unidad:"
+            android:textStyle="bold"
+            android:textColor="#444"
+            android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/etNombreUnidad"
+            android:hint="Completar"
+            android:inputType="textCapWords"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Cantidad de ocupantes -->
+        <TextView
+            android:text="Cantidad de ocupantes:"
+            android:textStyle="bold"
+            android:textColor="#444"
+            android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/etCantidadOcupantes"
+            android:hint="Completar"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Tipo de documento -->
+        <TextView
+            android:text="Tipo documento:"
+            android:textStyle="bold"
+            android:textColor="#444"
+            android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Spinner
+            android:id="@+id/spTipoDocumento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Documento -->
+        <TextView
+            android:text="Documento:"
+            android:textStyle="bold"
+            android:textColor="#444"
+            android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/etDocumento"
+            android:hint="Completar"
+            android:inputType="textCapCharacters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Nombres del ocupante -->
+        <TextView
+            android:text="Nombre Ocupante (Arrendatario):"
+            android:textStyle="bold"
+            android:textColor="#444"
+            android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/etNombresOcupante"
+            android:hint="Completar"
+            android:inputType="textCapWords"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Apellidos del ocupante -->
+        <TextView
+            android:text="Apellidos Ocupante (Arrendatario):"
+            android:textStyle="bold"
+            android:textColor="#444"
+            android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/etApellidosOcupante"
+            android:hint="Completar"
+            android:inputType="textCapWords"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Teléfono -->
+        <TextView
+            android:text="Teléfono:"
+            android:textStyle="bold"
+            android:textColor="#444"
+            android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/etTelefono"
+            android:hint="Completar"
+            android:inputType="phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Correo -->
+        <TextView
+            android:text="Correo:"
+            android:textStyle="bold"
+            android:textColor="#444"
+            android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/etCorreo"
+            android:hint="Completar"
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Medidor asociado -->
+        <TextView
+            android:text="Medidor asociado:"
+            android:textStyle="bold"
+            android:textColor="#444"
+            android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/etMedidor"
+            android:hint="Completar"
+            android:inputType="textCapCharacters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Lectura inicial -->
+        <TextView
+            android:text="Asignar lectura inicial:"
+            android:textStyle="bold"
+            android:textColor="#444"
+            android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/etLecturaInicial"
+            android:hint="Completar"
+            android:inputType="numberDecimal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Botón Guardar -->
+        <Button
+            android:id="@+id/btnGuardarUnidad"
+            android:text="Guardar"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:paddingVertical="14dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/primary_blue"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+</ScrollView>
+
+<include layout="@layout/include_footer" android:id="@+id/footer"/>
+</LinearLayout>

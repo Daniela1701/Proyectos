@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <!-- Contenedor general -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- Tarjeta principal -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:layout_margin="12dp"
+            android:padding="12dp"
+            android:elevation="2dp">
+
+            <!-- Datos del recibo -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recibo por División de departamento"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/txtDireccion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Navidad de Villa Mz C Lt 8 - Chorrillos"
+                android:textColor="#666"
+                android:textSize="12sp"
+                android:layout_marginTop="2dp" />
+
+            <TextView
+                android:id="@+id/txtTelefono"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fono: 970599107"
+                android:textColor="#666"
+                android:textSize="12sp"
+                android:layout_marginTop="2dp" />
+
+            <!-- Línea recibo y mes -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/txtRecibo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="6dp"
+                    android:background="#1976D2"
+                    android:text="RECIBO N° 001-000165"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/Mes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#1976D2"
+                    android:padding="6dp"
+                    android:text="MES CALC. SETIEMBRE"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- Datos básicos -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="12dp"
+                android:padding="8dp"
+                android:background="#F9F9F9"
+                android:elevation="1dp">
+
+                <TextView
+                    android:id="@+id/txtNombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NOMBRE: LUCY QUINTOR MARIO ALEJANDRO"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:textSize="13sp"
+                    android:layout_marginBottom="4dp" />
+
+                <!-- Unidad y fecha en una sola fila -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/txtUnidad"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="UNIDAD 101"
+                        android:textColor="#444"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/txtFechaEmision"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="end"
+                        android:text="FECHA DE EMISIÓN: 23/09/2025"
+                        android:textColor="#444"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtDepartamento"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DEPARTAMENTO: LIMA/CHORRILLOS"
+                    android:textColor="#444"
+                    android:textSize="12sp"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+
+            <!-- Datos técnicos -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DATOS TÉCNICOS LUZ"
+                android:textStyle="bold"
+                android:textColor="#000"
+                android:textSize="14sp"
+                android:layout_marginTop="16dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:background="#F9F9F9">
+
+                <TextView
+                    android:id="@+id/txtMedidor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MEDIDOR: Contrato Interno - 30140011234"
+                    android:textSize="12sp"
+                    android:textColor="#333" />
+
+                <!-- Lectura anterior y fecha inicio -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtLecturaAnterior"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="LECTURA ANTERIOR: 08792"
+                        android:textSize="12sp"
+                        android:textColor="#333" />
+
+                    <TextView
+                        android:id="@+id/txtFechaInicio"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="01/09/2025"
+                        android:textSize="12sp"
+                        android:textColor="#333" />
+                </LinearLayout>
+
+                <!-- Lectura actual y fecha fin -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtLecturaPosterior"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="LECTURA ACTUAL: 08850"
+                        android:textSize="12sp"
+                        android:textColor="#333" />
+
+                    <TextView
+                        android:id="@+id/txtFechaFin"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="30/09/2025"
+                        android:textSize="12sp"
+                        android:textColor="#333" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtDiferenciaLecturas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CONSUMO: 58 kWh"
+                    android:textSize="12sp"
+                    android:textColor="#333" />
+
+                <TextView
+                    android:id="@+id/txtCostokWh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PRECIO UNIT kWh: S/ 0.54"
+                    android:textSize="12sp"
+                    android:textColor="#333" />
+            </LinearLayout>
+
+            <!-- Tabla de meses -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/txtMes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Setiembre"
+                        android:textStyle="bold"
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:id="@+id/txtMontoTotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="S/68.71"
+                        android:textColor="#000" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Total a pagar -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#1976D2"
+                android:layout_marginTop="16dp"
+                android:padding="12dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CONSUMO DE LUZ"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TOTAL A PAGAR S/:"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/MontoTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="68.71"
+                    android:textColor="#ffffff"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/MontoTexto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SESENTA Y OCHO CON 71/100 SOLES"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Botón -->
+            <Button
+                android:id="@+id/btnGenerarPdf"
+                android:text="Descargar PDF"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#1A73E8"
+                android:textColor="#FFFFFF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Botón -->
+            <Button
+                android:id="@+id/btnRetornar"
+                android:text="Retornar"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#1A73E8"
+                android:textColor="#FFFFFF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:elevation="2dp"
+    android:layout_margin="8dp"
+    android:padding="8dp"
+    android:backgroundTintMode="src_in"
+    android:clipToPadding="false"
+    android:clipChildren="false">
+
+    <!-- Encabezado -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="#F8F4FF"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_calendar_month"
+            app:tint="#1976D2"
+            android:contentDescription="Icono de mes"/>
+
+        <TextView
+            android:id="@+id/tvMes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingStart="8dp"
+            android:text="Octubre 2025"
+            android:textStyle="bold"
+            android:textColor="#1976D2"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/btnExpandir"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_expand_more"
+            app:tint="#1976D2"
+            android:contentDescription="Expandir"/>
+    </LinearLayout>
+
+    <!-- Contenedor de detalles -->
+    <LinearLayout
+        android:id="@+id/layoutDetalles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#F5F8FF"
+        android:padding="8dp">
+
+        <!-- Títulos -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="4dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Consumo"
+                android:textColor="#0D47A1"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Costo"
+                android:textColor="#0D47A1"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="kWh/día"
+                android:textColor="#0D47A1"
+                android:textStyle="bold"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <!-- Valores -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#1976D2"
+            android:paddingVertical="4dp">
+
+            <TextView
+                android:id="@+id/tvConsumo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_value_box"
+                android:text="245 kWh"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:padding="6dp"/>
+
+            <TextView
+                android:id="@+id/tvCosto"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_value_box"
+                android:text="S/. 156.00"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:padding="6dp"/>
+
+            <TextView
+                android:id="@+id/tvKwhDia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_value_box"
+                android:text="S/. 156.00"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:padding="6dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F6FA">
+
+    <include layout="@layout/include_header" android:id="@+id/header"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:padding="15dp">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Clave -->
+        <TextView
+            android:text="Clave de predio:"
+            android:textStyle="bold"
+            android:textColor="#444"
+            android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/etClave"
+            android:hint="Completar valor inicial"
+            android:inputType="textCapCharacters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Nombre -->
+        <TextView
+            android:text="Nombre de predio:"
+            android:textStyle="bold"
+            android:textColor="#444"
+            android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/etNombre"
+            android:hint="Completar"
+            android:inputType="textCapWords"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Departamento -->
+        <TextView
+            android:text="Departamento:"
+            android:textStyle="bold"
+            android:textColor="#444"
+            android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Spinner
+            android:id="@+id/spDepartamento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Provincia -->
+        <TextView
+            android:text="Provincia:"
+            android:textStyle="bold"
+            android:textColor="#444"
+            android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Spinner
+            android:id="@+id/spProvincia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Distrito -->
+        <TextView
+            android:text="Distrito:"
+            android:textStyle="bold"
+            android:textColor="#444"
+            android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Spinner
+            android:id="@+id/spDistrito"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Dirección -->
+        <TextView
+            android:text="Dirección exacta de predio:"
+            android:textStyle="bold"
+            android:textColor="#444"
+            android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/etDireccion"
+            android:hint="Completar"
+            android:inputType="textCapSentences|textMultiLine"
+            android:minLines="2"
+            android:gravity="top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Comentarios -->
+        <TextView
+            android:text="Comentarios (opcional):"
+            android:textStyle="bold"
+            android:textColor="#444"
+            android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/etComentarios"
+            android:hint="Completar"
+            android:inputType="textCapSentences|textMultiLine"
+            android:minLines="2"
+            android:gravity="top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Botón Guardar -->
+        <Button
+            android:id="@+id/btnGuardar"
+            android:text="Guardar"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:paddingVertical="14dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/primary_blue"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+    </ScrollView>
+    <include layout="@layout/include_footer" android:id="@+id/footer"/>
+</LinearLayout>

@@ -1,0 +1,37 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <!-- Fondo solo para el icono -->
+    <LinearLayout
+        android:id="@+id/bgIcono"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:background="@drawable/bg_rounded_predio"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/ivIcono"
+            android:src="@drawable/predio1"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            app:tint="#757575"
+            android:contentDescription="Predio" />
+    </LinearLayout>
+
+    <!-- Texto fuera del fondo -->
+    <TextView
+        android:id="@+id/tvNombre"
+        android:text="Predio"
+        android:textColor="#333"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="6dp"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content" />
+</LinearLayout>

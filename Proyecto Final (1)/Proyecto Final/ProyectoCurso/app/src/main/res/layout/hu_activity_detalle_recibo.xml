@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- HEADER -->
+    <include
+        android:id="@+id/header"
+        layout="@layout/include_header" />
+
+    <!-- Contenedor principal -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Nombre del proveedor -->
+            <TextView
+                android:id="@+id/tv_proveedor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Proveedor: Luz del Sur"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#0D47A1"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- 📦 Bloque azul pastel -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp"
+                app:strokeColor="#BBDEFB"
+                app:strokeWidth="1dp"
+                android:backgroundTint="#EAF4FE"> <!-- Azul más claro -->
+
+                <!-- Padding interno -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <!-- Periodo -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Periodo:"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_dark"/>
+
+                    <TextView
+                        android:id="@+id/tv_periodo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Septiembre"
+                        android:textSize="17sp"
+                        android:layout_marginBottom="20dp"
+                        android:textColor="@color/text_gray"/>
+
+
+                    <!-- Fecha de registro -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Fecha de registro:"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_dark"/>
+
+                    <TextView
+                        android:id="@+id/tv_fecha_registro"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="10/09/2025"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="20dp"
+                        android:textColor="@color/text_gray"/>
+
+                    <!-- Código de factura -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Código de factura:"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_dark"/>
+
+                    <TextView
+                        android:id="@+id/tv_codigo_factura"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="12345"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="20dp"
+                        android:textColor="@color/text_gray"/>
+
+                    <!-- Total -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Total (S/.):"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_dark"/>
+
+                    <TextView
+                        android:id="@+id/tv_total"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="S/. 125.50"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_gray"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Botón volver -->
+            <Button
+                android:id="@+id/btn_volver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Volver"
+                android:layout_gravity="center"
+                android:layout_marginTop="12dp"
+                android:paddingHorizontal="24dp"
+                android:paddingVertical="10dp"
+                android:backgroundTint="#1976D2"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:elevation="4dp"
+                android:layout_marginBottom="20dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- FOOTER -->
+    <include
+        android:id="@+id/footer"
+        layout="@layout/include_footer" />
+</LinearLayout>

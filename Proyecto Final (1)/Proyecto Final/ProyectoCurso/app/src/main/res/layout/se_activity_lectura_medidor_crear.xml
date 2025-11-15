@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F6FA"
+    tools:context=".se_LecturaMedidorCrearActivity">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/include_header" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:elevation="1dp"
+            android:background="@drawable/lectura_contorno"
+            android:padding="15dp">
+
+            <!-- Primer bloque -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Valor actual de consumo (kWh):"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#2D2D2D" />
+
+                <EditText
+                    android:id="@+id/etValor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Completar"
+                    android:inputType="numberDecimal" />
+            </LinearLayout>
+            <!-- Tipo de lectura -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="10dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tipo de lectura:"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#2D2D2D"
+                    android:layout_marginBottom="4dp" />
+
+                <RadioGroup
+                    android:id="@+id/rgTipoLectura"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rbNormal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NORMAL"
+                        android:checked="true"
+                        android:textSize="18sp"
+                        android:textColor="#2D2D2D"
+                        android:layout_marginEnd="20dp"/>
+
+                    <RadioButton
+                        android:id="@+id/rbInicial"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="INICIAL"
+                        android:textSize="18sp"
+                        android:textColor="#2D2D2D"/>
+                </RadioGroup>
+            </LinearLayout>
+
+
+
+            <!-- Segundo bloque -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Fecha de registro:"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#2D2D2D" />
+
+                <EditText
+                    android:id="@+id/etFecha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:textColor="#555555"
+                    android:textSize="18sp"
+                    android:padding="8dp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+            <!-- Tercer bloque -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Unidad asociada:"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#2D2D2D" />
+
+                <EditText
+                    android:id="@+id/etUnidad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:textColor="#555555"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:hint="UN-001"
+                    android:inputType="text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Comentarios (opcional):"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#2D2D2D" />
+
+                <EditText
+                    android:id="@+id/etComentarios"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Opcional"
+                    android:inputType="textMultiLine" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Adjuntar foto (opcional)"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="4dp"
+                    android:textStyle="bold"
+                    android:textColor="#2D2D2D" />
+
+                <!-- Botón para subir foto -->
+                <LinearLayout
+                    android:id="@+id/btnSubirFoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:background="@drawable/lectura_bg_camara"
+                    android:layout_marginEnd="8dp"
+                    android:layout_gravity="center_horizontal"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:elevation="2dp">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/lectura_ic_camara"
+                        app:tint="#FFFFFF" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Subir foto"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+
+                <!-- Nueva vista previa dinámica -->
+                <ImageView
+                    android:id="@+id/imgPreview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:layout_marginTop="8dp"
+                    android:background="#EAEAEA"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingVertical="8dp"
+                android:layout_marginTop="10dp">
+
+                <!-- 🔹 Botón Cancelar -->
+                <Button
+                    android:id="@+id/btnCancelarLectura"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:backgroundTint="#D9D9D9"
+                    android:elevation="3dp"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="10dp"
+                    android:text="Cancelar"
+                    android:textColor="#656565"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- 🔹 Botón Guardar -->
+                <Button
+                    android:id="@+id/btnGuardarLectura"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#1976D2"
+                    android:elevation="3dp"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="10dp"
+                    android:text="Guardar"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <include
+        android:id="@+id/footer"
+        layout="@layout/include_footer" />
+
+</LinearLayout>

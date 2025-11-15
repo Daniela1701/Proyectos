@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/main"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--  Header reutilizable -->
+    <include
+        android:id="@+id/header"
+        layout="@layout/include_header" />
+
+
+    <!-- CONTENIDO SCROLLABLE -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- Clave de Predio -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Clave de predio:"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/clavePredio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="P001"
+                android:inputType="text" />
+
+            <!-- Nombre de predio -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nombre de predio:"
+                android:textStyle="bold"
+                android:paddingTop="8dp" />
+
+            <EditText
+                android:id="@+id/nombrePredio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Las Gardenias"
+                android:inputType="text" />
+
+            <!-- Departamento -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Departamento:"
+                android:textStyle="bold"
+                android:paddingTop="8dp" />
+
+            <Spinner
+                android:id="@+id/spinnerDepartamento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Provincia -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Provincia:"
+                android:textStyle="bold"
+                android:paddingTop="8dp" />
+
+            <Spinner
+                android:id="@+id/spinnerProvincia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Distrito -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Distrito:"
+                android:textStyle="bold"
+                android:paddingTop="8dp" />
+
+            <Spinner
+                android:id="@+id/spinnerDistrito"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Dirección exacta -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dirección exacta de predio:"
+                android:textStyle="bold"
+                android:paddingTop="8dp" />
+
+            <EditText
+                android:id="@+id/direccionPredio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Av. Prueba 123"
+                android:inputType="textPostalAddress" />
+
+            <!-- Comentarios -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Comentarios (opcional):"
+                android:textStyle="bold"
+                android:paddingTop="8dp" />
+
+            <EditText
+                android:id="@+id/comentarios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nueva adquisición"
+                android:inputType="text" />
+
+            <!-- Mensaje verde -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Si ya terminaste de crear tu predio, guarda los datos"
+                android:textColor="#4CAF50"
+                android:background="#E8F5E9"
+                android:padding="8dp"
+                android:layout_marginTop="12dp" />
+
+            <!-- Botón Guardar -->
+            <Button
+                android:id="@+id/btnGuardar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Guardar"
+                android:backgroundTint="#1976D2"
+                android:textColor="#FFFFFF"
+                android:layout_marginLeft="70dp"
+                android:layout_marginRight="70dp"
+                android:layout_marginTop="16dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!--  Footer reutilizable -->
+    <include
+        android:id="@+id/footer"
+        layout="@layout/include_footer" />
+
+
+</LinearLayout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ProyectoCurso">
+        <activity
+            android:name=".se_RegistroUsuarioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".se_LecturaMedidorEditarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".se_LecturaMedidorDetalleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".se_LecturaMedidorCrearActivity"
+            android:exported="false" />
+        <activity
+            android:name=".se_LecturaMedidoresListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".se_DashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".se_LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <!-- JOSÉ-->
+        <activity
+            android:name=".la_GestionUnidadesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".la_CrearPredioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".la_CrearUnidadActivity"
+            android:exported="false" />
+        <activity
+            android:name=".la_EditarUnidadActivity"
+            android:exported="false" />
+
+        <!-- DANI-->
+        <activity
+            android:name=".HU_GestionPrediosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HU_DetalleReciboActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HU_ListarRecibosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HU_RegistrarReciboActivity"
+            android:exported="false" />
+
+        <!-- BRIYIT -->
+        <activity
+            android:name=".CM_EditarPredio"
+            android:exported="false" />
+        <!-- PABLO -->
+        <activity android:name=".normalizacion.Ac_Calcnorm_Activity" android:exported="false" />
+        <activity android:name=".distribucion.Ac_CalcDist_Activity" android:exported="false" />
+        <activity android:name=".factura.BCFactura" android:exported="false" />
+        <activity android:name=".factura.BCFacturaDetalle" android:exported="false" />
+        <activity android:name=".BCHistorialDetalleFactura" android:exported="false" />
+        <activity android:name=".BCHistorialConsumo" android:exported="false"/>
+        <activity android:name=".BCHistorialFacturas" android:exported="false" />
+
+    </application>
+
+</manifest>

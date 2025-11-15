@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F6FA"
+    tools:context=".se_LecturaMedidoresListActivity">
+
+    <!-- 🔹 Header reutilizable -->
+    <include
+        android:id="@+id/header"
+        layout="@layout/include_header" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingHorizontal="30dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:elevation="2dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Registrar las lecturas de los medidores de tu predio."
+                    android:textSize="20sp"
+                    android:textColor="#7B7B7B"
+                    android:lineSpacingExtra="2dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/lectura_card_selector"
+                android:padding="10dp"
+                android:elevation="1dp"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="@null">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Selecciona tu Predio:"
+                    android:textColor="#2D2D2D"
+                    android:textStyle="bold"
+                    android:textSize="20sp"/>
+
+                <LinearLayout
+                    android:id="@+id/layoutBloquePredio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="6dp"
+                    android:paddingBottom="1dp">
+
+                    <Spinner
+                        android:id="@+id/spinnerPredios"
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:background="@drawable/lectura_spinner_custom"
+                        android:popupBackground="@drawable/lectura_popup_custom"
+                        android:popupElevation="0dp"
+                        android:paddingHorizontal="12dp"
+                        android:spinnerMode="dropdown"
+                        android:dropDownVerticalOffset="34dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#A9A9A9"
+                android:layout_marginTop="5dp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Servicios encontrados:"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="#2D2D2D"
+                android:layout_marginBottom="2dp" />
+
+            <LinearLayout
+                android:id="@+id/layoutServiciosContainer"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:orientation="vertical"
+                android:gravity="start"
+                android:paddingHorizontal="5dp">
+
+                <LinearLayout
+                    android:id="@+id/layoutServicioLuz"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/lectura_card_vacio"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:id="@+id/iconoLuz"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/lectura_ic_flash"
+                        app:tint="#9E9E9E"
+                        android:layout_marginBottom="2dp"/>
+
+                    <TextView
+                        android:id="@+id/tvServicioLuz"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Luz"
+                        android:textColor="#9E9E9E"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <!-- 🔹 Bloque completo para seleccionar unidad -->
+            <LinearLayout
+                android:id="@+id/layoutBloqueUnidad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="8dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp">
+
+            <!-- 🔸 Fila horizontal: texto + spinner -->
+            <LinearLayout
+                android:id="@+id/layoutBuscarUnidad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/lectura_contorno"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="10dp"
+                android:gravity="center_vertical"
+>
+
+                <TextView
+                    android:id="@+id/tvLabelUnidad"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:text="Busca tu unidad:"
+                    android:textSize="20sp"
+                    android:textColor="#2D2D2D"
+                    android:textStyle="bold"
+                    android:gravity="start" />
+
+                <Spinner
+                    android:id="@+id/spinnerUnidades"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.6"
+                    android:padding="5dp"
+                    android:paddingHorizontal="12dp"
+                    android:layout_height="38dp"
+                    android:dropDownVerticalOffset="34dp"
+                    android:spinnerMode="dropdown"
+                    android:background="@drawable/lectura_spinner_custom"
+                    android:popupBackground="@drawable/lectura_popup_custom"
+                    android:popupElevation="0dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="2dp"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp">
+
+                <!-- Texto de la izquierda -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Ultimos registros"
+                    android:textSize="20sp"
+                    android:textColor="#7B7B7B"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/btnNuevaLectura"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nuevo"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:paddingHorizontal="14dp"
+                    android:paddingVertical="6dp"
+                    android:gravity="center"
+                    android:elevation="2dp"
+                    android:backgroundTint="#1976D2"
+                    android:layout_marginEnd="4dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:layout_marginTop="10dp"
+                android:elevation="1dp"
+                android:background="@drawable/lectura_contorno">
+
+                <!-- 🔹 Card de “sin registros” -->
+                <LinearLayout
+                    android:id="@+id/layoutSinRegistros"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:paddingVertical="5dp"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No hay registros para mostrar"
+                        android:textSize="16sp"
+                        android:textColor="#9E9E9E"
+                        android:layout_marginBottom="12dp"/>
+
+                    <LinearLayout
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:background="@drawable/lectura_card_vacio"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/lectura_ic_flash"
+                            app:tint="#9E9E9E"
+                            android:layout_marginBottom="4dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Luz"
+                            android:textColor="#9E9E9E"
+                            android:textSize="16sp"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--  RecyclerView con tu XML personalizado -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvLecturas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:overScrollMode="never"
+                    android:nestedScrollingEnabled="false"
+                    android:layout_marginBottom="20dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/footer"
+        layout="@layout/include_footer" />
+</LinearLayout>

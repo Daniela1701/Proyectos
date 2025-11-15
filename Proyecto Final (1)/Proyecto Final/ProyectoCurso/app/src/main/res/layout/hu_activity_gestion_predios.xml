@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- HEADER -->
+    <include
+        android:id="@+id/header"
+        layout="@layout/include_header" />
+
+    <!-- Texto inicial -->
+    <TextView
+        android:id="@+id/tvMensajePredios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Podrás gestionar tus predios, modificar y eliminar según necesites."
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:layout_marginBottom="8dp"/>
+    <!-- CONTENIDO -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/containerPredios"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp">
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- FOOTER -->
+    <include
+        android:id="@+id/footer"
+        layout="@layout/include_footer" />
+</LinearLayout>

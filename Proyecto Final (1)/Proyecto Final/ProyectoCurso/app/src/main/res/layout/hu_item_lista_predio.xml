@@ -1,0 +1,93 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/predio_card"
+    android:gravity="center_vertical"
+    android:layout_marginBottom="12dp">
+
+    <!-- Icono -->
+    <ImageView
+        android:id="@+id/ivIconoPredio"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/predio_apartment_24"
+        android:background="@drawable/predio_circle_blue"
+        android:padding="8dp"
+        android:contentDescription="Icono Predio"/>
+
+    <!-- Información -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginStart="12dp"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvNombrePredio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Predio Las Casuarinas - P001"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/tvDireccionPredio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dirección: Av. Prueba # 123"
+            android:textSize="14sp"
+            android:textColor="#808080"/>
+
+        <TextView
+            android:id="@+id/tvServicioPredio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Servicio: Luz"
+            android:textSize="14sp"
+            android:textColor="#FFA500"/>
+
+        <TextView
+            android:id="@+id/tvGestionarUnidades"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gestiona las unidades de tu predio"
+            android:textSize="13sp"
+            android:textColor="#00AA00"
+            android:layout_marginTop="4dp"/>
+    </LinearLayout>
+
+    <!-- Botones -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/btnEliminarPredio"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/predio_delete"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Eliminar Predio" />
+
+        <ImageButton
+            android:id="@+id/btnEditarPredio"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/predio_edit"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Editar Predio" />
+
+        <ImageButton
+            android:id="@+id/btnGestionarPredio"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/predio_gestionar"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Gestionar Predio" />
+    </LinearLayout>
+</LinearLayout>

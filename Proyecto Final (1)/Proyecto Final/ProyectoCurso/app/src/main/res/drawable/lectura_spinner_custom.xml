@@ -1,0 +1,7 @@
+<!-- bg_spinner_custom.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#E6EFFF" /> <!-- color de fondo -->
+    <stroke android:width="0dp" android:color="@android:color/transparent" /> <!-- sin borde -->
+    <corners android:radius="12dp" /> <!-- esquinas redondeadas -->
+</shape>

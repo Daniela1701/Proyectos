@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:gravity="center_vertical">
+
+    <!-- Información -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+
+        <!-- Nombre de unidad -->
+        <TextView
+            android:id="@+id/tvNombreUnidad"
+            android:text="Dpto 101"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#333"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- Ocupante -->
+        <TextView
+            android:id="@+id/tvOcupante"
+            android:text="Ocupante: asdcasz"
+            android:textSize="14sp"
+            android:textColor="#555"
+            android:layout_marginTop="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- Texto pequeño -->
+        <TextView
+            android:id="@+id/tvBajaOcupante"
+            android:text="Si deseas dar de baja al ocupante"
+            android:textSize="12sp"
+            android:textColor="#888"
+            android:layout_marginTop="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <!-- Botones en 2 filas -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <!-- Fila 1: lápiz y tacho -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <!-- Editar -->
+            <ImageButton
+                android:id="@+id/btnEditar"
+                android:src="@drawable/editar"
+                android:contentDescription="Editar"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="6dp" />
+
+            <!-- Eliminar unidad -->
+            <ImageButton
+                android:id="@+id/btnEliminarUnidad"
+                android:src="@drawable/del"
+                android:contentDescription="Eliminar unidad"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="6dp"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+        <!-- Fila 2: X naranja debajo -->
+        <ImageButton
+            android:id="@+id/btnEliminarOcupante"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="4dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Dar de baja ocupante"
+            android:padding="6dp"
+            android:src="@drawable/delete" />
+    </LinearLayout>
+</LinearLayout>

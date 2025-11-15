@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#1976D2"
+    tools:context=".se_RegistroUsuarioActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registro"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="16dp" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/login_icon_user"
+            android:layout_gravity="center" />
+    </LinearLayout>
+
+    <!-- 🔹 Formulario -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:layout_marginHorizontal="30dp"
+        android:orientation="vertical"
+        android:gravity="center_vertical">
+
+        <!-- Nombre -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:padding="8dp"
+            android:background="@drawable/login_input_bg"
+            android:elevation="2dp"
+            android:clipToOutline="true">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nombre completo:"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#2D2D2D" />
+
+            <EditText
+                android:id="@+id/etNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ingrese su nombre completo" />
+        </LinearLayout>
+
+        <!-- Correo -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:padding="8dp"
+            android:background="@drawable/login_input_bg"
+            android:elevation="2dp"
+            android:clipToOutline="true">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Correo electrónico:"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#2D2D2D" />
+
+            <EditText
+                android:id="@+id/etCorreo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ingrese su correo"
+                android:inputType="textEmailAddress" />
+        </LinearLayout>
+
+        <!-- Contraseña -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:padding="8dp"
+            android:background="@drawable/login_input_bg"
+            android:elevation="4dp"
+            android:clipToOutline="true">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contraseña:"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#2D2D2D" />
+
+            <EditText
+                android:id="@+id/etContrasena"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Cree una contraseña"
+                android:inputType="textPassword" />
+        </LinearLayout>
+
+
+        <!-- Botón Registrar -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:background="@drawable/login_buton_bg"
+            android:padding="0dp">
+
+            <Button
+                android:id="@+id/btnRegistrar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Registrar"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:padding="8dp"
+                android:background="@android:color/transparent"
+                android:textColor="#1976D2" />
+        </FrameLayout>
+
+        <!-- Botón volver -->
+        <TextView
+            android:id="@+id/tvVolverLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="¿Ya tienes cuenta? Inicia sesión"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+
+    <!-- 🔹 Footer -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginBottom="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="© 2025 Proyecto MiRecibo"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:alpha="0.8" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="App Movile v1.0.0"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            android:alpha="0.6"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
+</LinearLayout>

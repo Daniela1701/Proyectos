@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F6FA">
+
+    <!-- =========== HEADER REUTILIZABLE =========== -->
+    <include layout="@layout/include_header" android:id="@+id/header"/>
+
+    <!-- CONTENIDO -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Título: Selecciona un predio -->
+        <TextView
+            android:text="Selecciona un predio"
+            android:textStyle="bold"
+            android:textColor="#1976D2"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- Botones de predios -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:id="@+id/llBotonesPredios"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:spacing="8dp"/>
+        </HorizontalScrollView>
+
+        <!-- Buscador -->
+        <EditText
+            android:id="@+id/etBuscarUnidad"
+            android:hint="Busca tu unidad..."
+            android:padding="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_rounded_white"
+            android:drawableStart="@android:drawable/ic_menu_search"
+            android:drawablePadding="8dp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Título + Botón Nuevo -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:text="Tus últimos registros"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnNuevaUnidad"
+                android:text="Nuevo"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:backgroundTint="#1976D2"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:paddingHorizontal="16dp"
+                android:minWidth="0dp"
+                android:minHeight="0dp"/>
+        </LinearLayout>
+
+        <!-- Recycler -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvUnidades"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:paddingBottom="8dp"/>
+    </LinearLayout>
+
+
+    <!-- =========== FOOTER REUTILIZABLE =========== -->
+    <include layout="@layout/include_footer" android:id="@+id/footer"/>
+</LinearLayout>

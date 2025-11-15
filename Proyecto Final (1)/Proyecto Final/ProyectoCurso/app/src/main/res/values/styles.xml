@@ -1,0 +1,10 @@
+<resources>
+
+
+    <!-- 🔹 Estilo personalizado para alinear el texto del Spinner a la derecha -->
+    <style name="SpinnerDerecha" parent="Widget.AppCompat.Spinner">
+        <item name="android:gravity">end</item>
+        <item name="android:textAlignment">viewEnd</item>
+    </style>
+
+</resources>

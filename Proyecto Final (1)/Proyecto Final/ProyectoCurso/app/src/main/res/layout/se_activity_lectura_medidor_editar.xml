@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F6FA"
+    tools:context=".se_LecturaMedidorEditarActivity">
+
+    <!-- 🔹 Header reutilizable -->
+    <include
+        android:id="@+id/header"
+        layout="@layout/include_header" />
+
+    <!-- 🔹 Contenido principal -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/lectura_contorno"
+            android:padding="15dp"
+            android:elevation="2dp">
+
+            <!-- 🔹 Unidad asociada -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:id="@+id/tvUnidad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Unidad asociada:"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#2D2D2D"
+                    android:layout_marginBottom="6dp" />
+
+                <EditText
+                    android:id="@+id/etUnidad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:textColor="#555555"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:padding="8dp"
+                    android:hint="Unidad 101" />
+            </LinearLayout>
+
+            <!-- 🔹 Valor de lectura -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Valor actual de consumo:"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#2D2D2D" />
+
+                <EditText
+                    android:id="@+id/etValor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Completar"
+                    android:inputType="numberDecimal" />
+            </LinearLayout>
+
+            <!-- 🔹 Tipo de lectura -->
+            <EditText
+                android:id="@+id/etTipoLectura"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:textColor="#555555"
+                android:visibility="gone"
+                android:textSize="18sp"
+                android:text="INICIAL"
+                android:layout_marginBottom="10dp" />
+
+            <!-- 🔹 Fecha -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Fecha de lectura:"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#2D2D2D" />
+
+                <EditText
+                    android:id="@+id/etFecha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:textColor="#555555"
+                    android:textSize="18sp"
+                    android:padding="8dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- 🔹 Comentarios -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Comentarios:"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#2D2D2D" />
+
+                <EditText
+                    android:id="@+id/etNotas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Opcional"
+                    android:inputType="textMultiLine" />
+            </LinearLayout>
+
+            <!-- 🔹 Adjuntar foto -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Adjuntar foto (opcional)"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#2D2D2D"
+                    android:layout_marginBottom="6dp" />
+
+                <!-- Botón cámara -->
+                <LinearLayout
+                    android:id="@+id/btnSubirFotoEditar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:background="@drawable/lectura_bg_camara"
+                    android:layout_gravity="center_horizontal"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:elevation="3dp">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/lectura_ic_camara"
+                        app:tint="#FFFFFF" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cambiar foto"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+
+                <!-- Vista previa -->
+                <ImageView
+                    android:id="@+id/imgPreviewEditar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:layout_marginTop="10dp"
+                    android:background="#EAEAEA"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <!-- 🔹 Botón Guardar -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingVertical="8dp">
+
+                <Button
+                    android:id="@+id/btnCancelarLectura"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:backgroundTint="#9E9E9E"
+                    android:elevation="2dp"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="10dp"
+                    android:text="Cancelar"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnGuardarLectura"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:backgroundTint="#1976D2"
+                    android:elevation="3dp"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="10dp"
+                    android:text="Actualizar"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- 🔹 Footer -->
+    <include
+        android:id="@+id/footer"
+        layout="@layout/include_footer" />
+
+</LinearLayout>
