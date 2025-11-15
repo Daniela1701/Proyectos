@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Detalle de mi pedido</title>
+
+  <!-- Bootstrap y estilos -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/css/gestion.css}">
+  <link rel="stylesheet" th:href="@{/css/footer.css}" type="text/css">
+  <link rel="stylesheet" th:href="@{/css/menu.css}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <div th:replace="pattern/cabecera :: cabecera"></div>
+
+  <div class="container mt-4 flex-grow-1 gestion-container">
+    <div class="card border">
+
+      <!-- CABECERA -->
+	 <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #fe9f2b;">
+  <div>
+    <p class="lista-font-2 mb-1 mt-2">Detalle del Pedido</p>
+  	<p class="lista-font-2 mb-0">
+      <span>Fecha: <span th:text="${#temporals.format(pedido.fecha, 'dd/MM/yyyy HH:mm')}">00/00/2000</span></span>
+    </p>
+  </div>
+  <div class="text-end">
+    <p class="lista-font-2 mb-0 text-white px-3 py-1 rounded"
+       style="background-color: #F66301;">
+      <strong>Total:</strong>
+      <span th:text="'S/. ' + ${#numbers.formatDecimal(pedido.total, 1, 'POINT', 2, 'POINT')}">S/. 0.00</span>
+    </p>
+  </div>
+</div>
+
+
+
+      <!-- TABLA -->
+      <div class="card-body p-0">
+        <div class="table-responsive">
+          <table class="table text-center mb-0 custom-table-border">
+            <thead class="table-orange">
+              <tr class="tr-size">
+                <th>ID Detalle</th>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio Unitario</th>
+                <th>Subtotal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr th:each="detalle : ${detalles}" class="tr-size">
+                <td th:text="${detalle.idDetalle}"></td>
+                <td th:text="${detalle.producto.nombre}"></td>
+                <td th:text="${detalle.cantidad}"></td>
+                <td th:text="'S/. ' + ${#numbers.formatDecimal(detalle.precioUnitario, 1, 'POINT', 2, 'POINT')}"></td>
+                <td th:text="'S/. ' + ${#numbers.formatDecimal(detalle.subtotal, 1, 'POINT', 2, 'POINT')}"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTÓN VOLVER -->
+    <div class="text-center mt-4">
+      <a th:href="@{/pedido/listarMisPedidos}" class="btn btn-outline-secondary" style="--bs-btn-hover-bg: #F66301;">
+        <i class="bi bi-arrow-left-circle me-2"></i>Volver a mi lista de pedidos
+      </a>
+    </div>
+  </div>
+
+  <div th:replace="/pattern/footer:: Footer"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

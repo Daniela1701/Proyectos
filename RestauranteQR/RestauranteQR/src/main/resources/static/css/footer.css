@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.footer-bg {
+  background-color: #000; 
+}
+
+.footer-bg a:hover {
+  color: #f76301; 
+}
+
+.footer-bg ul {
+  padding-left: 0;
+}
+
+.footer-bg ul ul {
+  margin-top: 0.5rem;
+}
+
+.footer-bg a,
+.footer-bg p {
+  font-size: 16px;
+  text-align: justify;
+}
+
+.logo-nombre{
+	font-size: 27px;
+}
+
+.icono-small{
+	font-size: 20px;
+}
+
+.table-orange{
+	background-color:  #fe9f2b;
+}

@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap');
+
+body{
+    font-family: Montserrat, sans-serif;
+}
+
+.border{
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+.gestion-container{
+	margin-bottom: 20px;
+}
+
+.btn-color{
+    background-color: #F66301;
+    color:white;
+}
+
+.btn-color-2{
+	background-color: #F66301;
+    color:white;
+}
+.btn-color:hover{
+    background-color: white;
+}
+
+.btn-color-2:hover{
+	background-color: #fe9f2b;
+	color:white;
+}
+
+.lista-font{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.lista-font-2{
+	font-size:24px;
+	font-weight: 700;
+}
+
+.table-orange th {
+    background-color: #fe9f2b; 
+}
+
+.card-color{
+    background-color: #fe9f2b; 
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+
+.gestion-font{
+    font-style: italic;
+    font-size: 20px;
+}
+
+.tr-size{
+	font-size:20px;
+}
+
+@media (max-width: 645px) {
+	
+.lista-font{
+    font-size: 15px;
+}
+
+.lista-font-2{
+	font-size:20px;
+}
+
+.gestion-font{
+    font-style: italic;
+    font-size: 15px;
+}
+
+.tr-size{
+	font-size:15px;
+}
+
+.gestion-container{
+	margin-bottom: 30px;
+}
+
+}
