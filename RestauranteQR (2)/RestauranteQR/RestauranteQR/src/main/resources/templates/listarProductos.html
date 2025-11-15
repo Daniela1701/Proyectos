@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Productos</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+	<link rel="stylesheet" th:href="@{/css/footer.css}" type="text/css">
+	    <link rel="stylesheet" th:href="@{/css/menu.css}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+	<div th:replace="pattern/cabecera :: cabecera"></div>
+
+	<div class="container mt-5 mb-5 flex-grow-1 mb-3 " style="font-size:20px">
+		<!-- TÍTULO -->
+		<div class="text-center mb-4">
+			<p class="fw-bold text-dark" style="font-size:30px">🛍️ Productos por categoría</p>
+		</div>
+
+		<!-- MENSAJES -->
+		<div th:if="${mensajeExito}"
+			class="alert alert-success alert-dismissible fade show" role="alert">
+			<i class="bi bi-check-circle-fill"></i> <span
+				th:text="${mensajeExito}">Producto agregado</span>
+			<button type="button" class="btn-close" data-bs-dismiss="alert"
+				aria-label="Cerrar"></button>
+		</div>
+
+		<div th:if="${listaProductos.isEmpty()}"
+			class="alert alert-info text-center">
+			<i class="bi bi-info-circle"></i> No hay productos disponibles en
+			esta categoría.
+		</div>
+
+		<!-- PRODUCTOS -->
+		<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"
+			th:unless="${listaProductos.isEmpty()}">
+			<div class="col" th:each="producto : ${listaProductos}">
+				<div class="card h-100 shadow-sm border-0">
+					<div class="row g-0 align-items-center">
+						<!-- Imagen -->
+						<div class="col-4 p-2 text-center">
+							<img th:src="${producto.url}" class="img-fluid rounded"
+								alt="Imagen" style="max-height: 90px; object-fit: contain;" />
+						</div>
+
+						<!-- Info -->
+						<div class="col-8">
+							<div class="card-body">
+								<p class="fw-bold mb-1" th:text="${producto.categoria}" style="font-size:24px">Categoría</p>
+								<p class="mb-0" th:text="${producto.nombre}">Nombre del
+									producto</p>
+								<p class="mb-0">
+									Precio: <span class="fw-bold text-dark">S/. <span
+										th:text="${producto.precio}">14.20</span></span>
+								</p>
+								<p class="mb-2">
+									Stock: <span th:text="${producto.stock}">10</span>
+								</p>
+
+								<form method="post" th:action="@{/producto/agregarCarrito}">
+									<input type="hidden" name="categoria" th:value="${categoria}" />
+									<input type="hidden" name="idProducto"
+										th:value="${producto.idProducto}" />
+									<button type="submit" class="btn btn-sm w-100" style="--bs-btn-bg: #F66301;--bs-btn-hover-bg: #fe9f2b;--bs-btn-color:white; font-size:20px ">
+										<i class="bi bi-cart-plus"></i> Agregar al carrito
+									</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- VOLVER -->
+		<div class="text-center mt-4">
+			<a th:href="@{/aplicacion/home}" class="btn btn-outline-secondary" style=" --bs-btn-hover-bg: #F66301;">
+				<i class="bi bi-arrow-left-circle"></i> Volver al inicio
+			</a>
+		</div>
+	</div>
+	
+	<div th:replace="/pattern/footer:: Footer"></div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

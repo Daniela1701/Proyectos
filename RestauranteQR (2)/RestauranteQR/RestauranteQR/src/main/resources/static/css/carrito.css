@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+.table-orange thead {
+  background-color: #F66301;
+  color: white;
+}
+
+.boton-naranja {
+  background-color: #F66301;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.boton-naranja:hover {
+  background-color: #FFA739;
+  color: white;
+  cursor: pointer;
+}

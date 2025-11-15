@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacto</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" th:href="@{/css/home.css}">
+     <link rel="stylesheet" th:href="@{/css/menu.css}">
+     <link rel="stylesheet" th:href="@{/css/footer.css}" type="text/css">
+    
+</head>
+<body class="d-flex flex-column min-vh-100">
+	<div th:replace="pattern/cabecera :: cabecera"></div>
+	 <div class="container py-4 flex-grow-1">
+    <h2 class="fw-bold">Contáctanos</h2>
+    <p class="lead">
+      Queremos escucharte y atenderte como mereces. Si tienes alguna pregunta o deseas visitarnos, no dudes en contactarnos.
+    </p>
+
+   <div class="container mb-5">
+  <h3 class="mb-4 fw-bold text-center">Nuestras Sedes</h3>
+  <div class="row g-4">
+
+    <!-- Sede Miraflores -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="https://www.abasturhub.com/img/blog/interiorismo-restaurantero---interiorismo-restaurantero.jpg" class="card-img-top" height="230"
+     style="object-fit: cover; width: 100%;" alt="Sede Miraflores">
+        <div class="card-body">
+          <h5 class="card-title fw-bold"><i class="fas fa-map-marker-alt me-2 text-danger"></i>Miraflores</h5>
+          <p class="card-text mb-1"><i class="fas fa-location-dot me-2"></i>Av. Larco 123, Miraflores, Lima</p>
+          <p class="card-text mb-1"><i class="fas fa-clock me-2"></i>Lunes a Domingo: 12:00 p.m. - 10:00 p.m.</p>
+          <p class="card-text mb-0"><i class="fas fa-phone me-2"></i>(01) 999 111 222</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sede San Borja -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+         <img src="https://plustv.pe/wp-content/uploads/2024/07/image-69.webp" class="card-img-top" height="230"
+     style="object-fit: cover; width: 100%;" alt="Sede San Borja">
+        <div class="card-body">
+          <h5 class="card-title fw-bold"><i class="fas fa-map-marker-alt me-2 text-warning"></i>San Borja</h5>
+          <p class="card-text mb-1"><i class="fas fa-location-dot me-2"></i>Calle Comercio 456, San Borja, Lima</p>
+          <p class="card-text mb-1"><i class="fas fa-clock me-2"></i>Lunes a Sábado: 11:00 a.m. - 9:00 p.m.</p>
+          <p class="card-text mb-0"><i class="fas fa-phone me-2"></i>(01) 888 333 444</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sede Los Olivos -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="https://teresarestaurant.com/wp-content/uploads/2025/01/WA_00138-scaled.jpg" class="card-img-top" height="230"
+     style="object-fit: cover; width: 100%;" alt="Sede Los Olivos">
+        <div class="card-body">
+          <h5 class="card-title fw-bold"><i class="fas fa-map-marker-alt me-2 text-success"></i>Los Olivos</h5>
+          <p class="card-text mb-1"><i class="fas fa-location-dot me-2"></i>Av. Universitaria 789, Los Olivos, Lima</p>
+          <p class="card-text mb-1"><i class="fas fa-clock me-2"></i>Martes a Domingo: 1:00 p.m. - 11:00 p.m.</p>
+          <p class="card-text mb-0"><i class="fas fa-phone me-2"></i>(01) 777 222 333</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+  </div>
+<div th:replace="/pattern/footer:: Footer"></div>
+	<!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

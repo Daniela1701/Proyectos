@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Usuario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" th:href="@{/css/footer.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/css/menu.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <div th:replace="pattern/cabecera :: cabecera"></div>
+
+    <!-- FORMULARIO DE EDICIÓN DE USUARIO -->
+    <div class="container mt-5 mb-5 flex-grow-1" style="max-width: 720px;font-size:20px">
+        <!-- MENSAJES -->
+        <div th:if="${mensajeError}" class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="bi bi-exclamation-triangle-fill"></i> <span th:text="${mensajeError}">Error al editar</span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+        </div>
+        <div th:if="${mensajeExito}" class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="bi bi-check-circle-fill"></i> <span th:text="${mensajeExito}">Cambios guardados</span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+        </div>
+
+        <!-- TARJETA -->
+        <div class="card shadow-lg border-0">
+            <div class="card-header text-white" style="background-color: #F66301; font-size:24px">
+                <p class="mb-0">🧑‍💼 Editar Usuario</p>
+            </div>
+            <div class="card-body">
+                <form th:action="@{/usuario/editarUsuario}" method="post">
+                    <input type="hidden" name="idUsuario" th:value="${usuario.idUsuario}" />
+
+                    <div class="mb-3">
+                        <label for="username" class="form-label" style="font-weight: 600;">Nombre de usuario:</label>
+                        <input type="text" id="username" name="username" class="form-control" th:value="${usuario.username}" required style="font-size:20px">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label" style="font-weight: 600;">Contraseña:</label>
+                        <input type="text" id="password" name="password" class="form-control" th:value="${usuario.password}" required style="font-size:20px">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="categoria" class="form-label" style="font-weight: 600;">Categoría:</label>
+                        <select id="categoria" name="idCategoria" class="form-select" required style="font-size:20px">
+                            <option value="">Seleccione...</option>
+                            <option th:each="categoria : ${listaCategorias}" th:value="${categoria.idCategoria}" th:text="${categoria.nombre}" th:selected="${categoria.idCategoria == usuario.categoria.idCategoria}"></option>
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="estado" class="form-label" style="font-weight: 600;" >Estado:</label>
+                        <select id="estado" name="estado" class="form-select" required style="font-size:20px">
+                            <option th:value="true" th:selected="${usuario.estado} == true">Activo</option>
+                            <option th:value="false" th:selected="${usuario.estado} == false">Inactivo</option>
+                        </select>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn me-2" style="--bs-btn-bg: #F66301;--bs-btn-hover-bg: #fe9f2b;--bs-btn-hover-color: white;--bs-btn-color:white; font-size:20px">
+                            <i class="bi bi-pencil-square"></i> Guardar Cambios
+                        </button>
+                        <a th:href="@{/usuario/gestionarUsuarios}" class="btn btn-outline-secondary" style="--bs-btn-hover-bg: #F66301; font-size:20px;">
+                            <i class="bi bi-arrow-left-circle"></i> Volver a la Lista
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="/pattern/footer:: Footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
